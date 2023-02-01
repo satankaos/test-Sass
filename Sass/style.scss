@@ -1,0 +1,81 @@
+/* variables  */
+$fontfamiliejemplo: 'new roman';
+$bgcolor: lightblue;
+$textcolor: darkblue;
+$fontsize: 18px;
+$redonedeado: 5px;
+$tamaño:100px;
+
+/* Use the variables */
+body {
+  background-color: $bgcolor;
+  color: $textcolor;
+ 
+}
+/*mixin*/
+@mixin centrado {
+    text-align:center;
+    margin:auto;
+}
+@mixin important-text {
+    color:$textcolor;
+    font-size: $fontsize;
+    font-weight: bold;
+    
+  }
+@mixin contenedor-ejemplos {
+    background-color: white;
+    color:black;
+    font-size: $fontsize;
+    border-radius: $redonedeado
+    
+}
+  .titulo{
+    /*include 1*/
+    @include centrado;
+    @include important-text;
+    font-size:50px;
+  }
+  .subtitulo{
+    /*include 2*/
+    @include centrado;
+    $textcolor: darkblue;
+    //uso la suma para añadirle 4px a los 18 de la variable
+    /*OPERACION 1*/
+    font-size: $fontsize+4;
+  }
+  .txtejemplo{font-size:$fontsize;
+    font-family: $fontfamiliejemplo;
+}
+  .ejemplo{
+    @include contenedor-ejemplos;
+  }
+/*SELECTOR1*/
+  .cajadestacada {
+    background-color: red;
+  
+    header {
+      background-color: wheat;
+      color:black;  
+  
+      a {
+        color: rebeccapurple;
+        
+      }
+    }
+  }
+  /*SELECTOR2*/
+  .lista{
+    font-size: $fontsize;
+    li{
+        background-color: rgb(149, 117, 205);
+        /*OPERACION2*/
+        border-radius: $redonedeado + 5;
+        width:$tamaño;
+        a{color:rgb(247, 220, 111 );
+            /*OPERACION 3*/
+            font-size: $fontsize - 3;
+           
+        }
+    }
+  }

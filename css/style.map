@@ -2,11 +2,11 @@
 	"version": 3,
 	"file": "style.css",
 	"sources": [
-		"../Sass/style.sass"
+		"../Sass/style.scss"
 	],
 	"sourcesContent": [
-		""
+		"/* define variables for the primary colors */\r\n$primary_1: #a2b9bc;\r\n$primary_2: #b2ad7f;\r\n$primary_3: #878f99;\r\n\r\n/* use the variables */\r\n.main-header {\r\n  background-color: $primary_1;\r\n}\r\n\r\n.menu-left {\r\n  background-color: $primary_2;\r\n}\r\n\r\n.menu-right {\r\n  background-color: $primary_3;\r\n}\r\n@mixin important-text {\r\n    color:pink;\r\n    font-size: 25px;\r\n    font-weight: bold;\r\n    border: 1px solid blue;\r\n  }\r\n  .danger {\r\n    @include important-text;\r\n    background-color: green;\r\n  }"
 	],
 	"names": [],
-	"mappings": ""
+	"mappings": "AAAA,6CAA6C;AAK7C,uBAAuB;;AACvB,AAAA,YAAY,CAAC;EACX,gBAAgB,EANN,OAAO;CAOlB;;;AAED,AAAA,UAAU,CAAC;EACT,gBAAgB,EATN,OAAO;CAUlB;;;AAED,AAAA,WAAW,CAAC;EACV,gBAAgB,EAZN,OAAO;CAalB;;;AAOC,AAAA,OAAO,CAAC;EALN,KAAK,EAAC,IAAI;EACV,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,IAAI;EACjB,MAAM,EAAE,cAAc;EAItB,gBAAgB,EAAE,KAAK;CACxB"
 }

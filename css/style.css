@@ -1,1 +1,67 @@
+/* variables  */
+/* Use the variables */
+body {
+  background-color: lightblue;
+  color: darkblue;
+}
+
+/*mixin*/
+.titulo {
+  /*include 1*/
+  text-align: center;
+  margin: auto;
+  color: darkblue;
+  font-size: 18px;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.subtitulo {
+  /*include 2*/
+  text-align: center;
+  margin: auto;
+  /*OPERACION 1*/
+  font-size: 22px;
+}
+
+.txtejemplo {
+  font-size: 18px;
+  font-family: "new roman";
+}
+
+.ejemplo {
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+/*SELECTOR1*/
+.cajadestacada {
+  background-color: red;
+}
+.cajadestacada header {
+  background-color: wheat;
+  color: black;
+}
+.cajadestacada header a {
+  color: rebeccapurple;
+}
+
+/*SELECTOR2*/
+.lista {
+  font-size: 18px;
+}
+.lista li {
+  background-color: rgb(149, 117, 205);
+  /*OPERACION2*/
+  border-radius: 10px;
+  width: 100px;
+}
+.lista li a {
+  color: rgb(247, 220, 111);
+  /*OPERACION 3*/
+  font-size: 15px;
+}
+
 /*# sourceMappingURL=style.css.map */
