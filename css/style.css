@@ -1,9 +1,9 @@
+@charset "UTF-8";
 /* variables  */
-/* Use the variables */
 body {
   background-color: lightblue;
   color: darkblue;
-}
+  background-image: url(/otros/sass-wallpaper-1.png); }
 
 /*mixin*/
 .titulo {
@@ -13,55 +13,115 @@ body {
   color: darkblue;
   font-size: 18px;
   font-weight: bold;
-  font-size: 50px;
-}
+  font-size: 50px; }
 
 .subtitulo {
   /*include 2*/
   text-align: center;
   margin: auto;
   /*OPERACION 1*/
-  font-size: 22px;
-}
+  font-size: 22px; }
 
 .txtejemplo {
   font-size: 18px;
-  font-family: "new roman";
-}
+  font-family: "new roman"; }
 
 .ejemplo {
   background-color: white;
   color: black;
   font-size: 18px;
-  border-radius: 5px;
-}
+  border-radius: 5px; }
 
 /*SELECTOR1*/
 .cajadestacada {
-  background-color: red;
-}
-.cajadestacada header {
-  background-color: wheat;
-  color: black;
-}
-.cajadestacada header a {
-  color: rebeccapurple;
-}
+  background-color: red; }
+  .cajadestacada header {
+    background-color: wheat;
+    color: black; }
+    .cajadestacada header a {
+      color: rebeccapurple; }
 
 /*SELECTOR2*/
 .lista {
-  font-size: 18px;
-}
-.lista li {
-  background-color: rgb(149, 117, 205);
-  /*OPERACION2*/
-  border-radius: 10px;
-  width: 100px;
-}
-.lista li a {
-  color: rgb(247, 220, 111);
-  /*OPERACION 3*/
-  font-size: 15px;
-}
+  font-size: 18px; }
+  .lista li {
+    background-color: #9575cd;
+    /*OPERACION2*/
+    border-radius: 10px;
+    width: 100px; }
+    .lista li a {
+      color: #f7dc6f;
+      /*OPERACION 3*/
+      font-size: 15px; }
+
+/*funcion 1 funcion sobre color de fondo de una caja */
+/*mixin 3*/
+.box-rojo {
+  box-sizing: border-box;
+  background-color: #F00;
+  border: #cc0000;
+  width: 100%;
+  height: 100px;
+  padding: 20px; }
+  .box-rojo:hover {
+    /* FUNCION 3 y 4 hace un oscurecimiento al pasar el mouse por encima  */
+    border: #990000;
+    background-color: #e60000;
+    cursor: pointer; }
+
+/*    FUNCION 2 SIRVE PARA CAMBIAR EL EL COLOR DE LAS LETRAS CUANDO INTRODUCES UN COLOR TE LO CAMBAIA A EXADECIMAL **/
+body {
+  color: #000000; }
+
+/*bucle 1 cambia el color de fondo de las celdas*/
+ul:nth-child(3n + 1) {
+  background-color: #004d99; }
+
+ul:nth-child(3n + 2) {
+  background-color: #0066cc; }
+
+ul:nth-child(3n + 3) {
+  background-color: #0080ff; }
+
+/* bucle 2 cambia tamaño  y color de las celdas  */
+.spacer-10 {
+  background-color: #004080;
+  height: 10px; }
+
+.spacer-20 {
+  background-color: #004d99;
+  height: 20px; }
+
+.spacer-30 {
+  background-color: #0059b3;
+  height: 30px; }
+
+.spacer-40 {
+  background-color: #0066cc;
+  height: 40px; }
+
+.spacer-50 {
+  background-color: #0073e6;
+  height: 50px; }
+
+.spacer-60 {
+  background-color: #0080ff;
+  height: 60px; }
+
+.spacer-70 {
+  background-color: #1a8cff;
+  height: 70px; }
+
+.spacer-80 {
+  background-color: #3399ff;
+  height: 80px; }
+
+.spacer-90 {
+  background-color: #4da6ff;
+  height: 90px; }
+
+.spacer-100 {
+  background-color: #66b3ff;
+  height: 100px; }
 
 /*# sourceMappingURL=style.css.map */
