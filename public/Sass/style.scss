@@ -1,0 +1,174 @@
+/* variables  */
+$fontfamiliejemplo: 'new roman';
+$bgcolor: lightblue;
+$textcolor: darkblue;
+$fontsize: 18px;
+$redonedeado: 5px;
+$tamaño: 100px;
+
+body {
+  background-color: $bgcolor;
+  color: $textcolor;
+  background-image: url(/otros/sass-wallpaper-1.png);
+}
+
+/*mixin*/
+@mixin centrado {
+  text-align: center;
+  margin: auto;
+}
+
+@mixin important-text {
+  color: $textcolor;
+  font-size: $fontsize;
+  font-weight: bold;
+
+}
+
+@mixin contenedor-ejemplos {
+  background-color: white;
+  color: black;
+  font-size: $fontsize;
+  border-radius: $redonedeado
+}
+
+.titulo {
+  /*include 1*/
+  @include centrado;
+  @include important-text;
+  font-size: 50px;
+}
+a.nav-link{
+ background-color:#212529;
+}
+.subtitulo {
+  /*include 2*/
+  @include centrado;
+  $textcolor: darkblue;
+  //uso la suma para añadirle 4px a los 18 de la variable
+  /*OPERACION 1*/
+  font-size: $fontsize+4;
+}
+
+.txtejemplo {
+  font-size: $fontsize;
+  font-family: $fontfamiliejemplo;
+}
+
+.ejemplo {
+  @include contenedor-ejemplos;
+  margin: auto;
+  padding: auto;
+  border-radius: 5%;
+}
+
+/*SELECTOR1*/
+.cajadestacada {
+  background-color: red;
+
+  header {
+    background-color: wheat;
+    color: black;
+
+    a {
+      color: rebeccapurple;
+
+    }
+  }
+}
+
+/*SELECTOR2*/
+.lista {
+  font-size: $fontsize;
+
+  li {
+    background-color: rgb(149, 117, 205);
+    /*OPERACION2*/
+    border-radius: $redonedeado + 5;
+    width: $tamaño;
+
+    a {
+      color: rgb(247, 220, 111);
+      /*OPERACION 3*/
+      font-size: $fontsize - 3;
+
+    }
+  }
+}
+
+/*funcion 1 funcion sobre color de fondo de una caja */
+/*mixin 3*/
+@mixin crea-caja($color: #26619C, $name: lapislazuli) {
+  .box-#{$name} {
+    @content;
+    box-sizing: border-box;
+    background-color: $color;
+    border: darken($color, 10%);
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+
+    &:hover {
+      /* FUNCION 3 y 4 hace un oscurecimiento al pasar el mouse por encima  */
+      border: darken($color, 20%);
+      background-color: darken($color, 5%);
+      cursor: pointer;
+    }
+  }
+}
+
+//LO LLAMAMOS
+@include crea-caja(#F00, rojo);
+
+/*    FUNCION 2 SIRVE PARA CAMBIAR EL EL COLOR DE LAS LETRAS CUANDO INTRODUCES UN COLOR TE LO CAMBAIA A EXADECIMAL **/
+@function change-color($color) {
+  @if ($color ==red) {
+    @return #ff0000;
+  }
+
+  @else if ($color ==green) {
+    @return #00ff00;
+  }
+
+  @else if ($color ==blue) {
+    @return #0000ff;
+  }
+
+  @else {
+    @return #000000;
+  }
+}
+
+body {
+  color: change-color(black);
+}
+
+$base-color: #036;
+
+/*bucle 1 cambia el color de fondo de las celdas*/
+@for $i from 1 through 3 {
+  ul:nth-child(3n + #{$i}) {
+    background-color: lighten($base-color, $i * 10%);
+  }
+}
+
+@function isMultiple10($i) {
+  // Función que comprueba si un numero es multiple de 10
+  @return ($i % 10==0); // Si el resto es 0, lo es.
+}
+
+/* bucle 2 cambia tamaño  y color de las celdas  */
+@for $i from 10 through 100 {
+
+  // Bucle que va de 10 a 100
+  @if(isMultiple10($i)) {
+
+    // y por cada numero comprobará si es multiple de 10
+    .spacer-#{$i} {
+      // en caso afirmativo creara la clase .spacer-xx
+      background-color: lighten($base-color, $i * 0.5%);
+
+      height: 0px + $i; // con un tamaño relativo al numero por el que avanza el bucle
+    }
+  }
+}

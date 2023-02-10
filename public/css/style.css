@@ -15,6 +15,9 @@ body {
   font-weight: bold;
   font-size: 50px; }
 
+a.nav-link {
+  background-color: #212529; }
+
 .subtitulo {
   /*include 2*/
   text-align: center;
@@ -30,7 +33,10 @@ body {
   background-color: white;
   color: black;
   font-size: 18px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin: auto;
+  padding: auto;
+  border-radius: 5%; }
 
 /*SELECTOR1*/
 .cajadestacada {
